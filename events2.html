@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+       .page{
+           width: 300px;
+           height: auto;
+           margin: 0 auto;
+       }
+       
+       .button{
+           color: white;
+           background-color: green;
+           width: 90px;
+           height: 30px;
+       }
+       
+       h1{
+           text-align: center;
+       }
+       
+       p{
+           font-size: 20px;
+       }
+       span{
+           font-weight: bold;
+       }
+    </style>
+    
+    <div class="page">
+    <h1>JavaScript. Events. Homework</h1>
+    <br>
+    <form>
+        <p><span>Другий спосіб:</span> використовуючи element.onclick</p>
+        <a href="http://lits.com.ua/"><input type="button" value="Спробуй!" class="button" id="but2"/></a>
+    </form>
+    </div>
+    <script>
+            var but2 = document.getElementById('but2');
+        
+            but2.onclick = function(){
+                var yes = confirm('Ви впевнені?')
+                if (!yes) return false;
+            };
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+       .page{
+           width: 300px;
+           height: auto;
+           margin: 0 auto;
+       }
+       
+       .button{
+           color: white;
+           background-color: green;
+           width: 90px;
+           height: 30px;
+       }
+       
+       h1{
+           text-align: center;
+       }
+       
+       p{
+           font-size: 20px;
+       }
+       span{
+           font-weight: bold;
+       }
+    </style>
+    
+    <div class="page">
+    <h1>JavaScript. Events. Homework</h1>
+    <br>
+    <form id="but4">
+        <p><span>Четверий спосіб:</span> використовуючи event.target</p>
+        <a href="http://lits.com.ua/"><input type="button" value="Спробуй!" class="button"/></a>
+    </form>
+    </div>
+    <script>
+        var but4 = document.getElementById('but4');
+        
+        but4.onclick = function(event){
+            function message (href){
+            var yes = confirm('Ви впевнені?');
+                if (!yes) return false;
+            }
+            
+            var target = event.target;
+            
+            while (target != this) {
+                if (target.nodeName == 'A') {
+          return message (target.getAttribute('href'));
+        }
+        target = target.parentNode;
+      }
+    }
+    </script>
+</body>
+</html>
